@@ -17,8 +17,15 @@ class RVTimeline(RVObject):
         self.deserializexml(xmlelement)
 
     def deserializexml(self,xmlelement):
-        self.timeOffset = float(xmlelement.attrib['timeOffset'])
-        self.duration = float(xmlelement.attrib['duration'])
-        self.selectedMediaTrackIndex = int(xmlelement.attrib['selectedMediaTrackIndex'])
-        self.loop = bool(xmlelement.attrib['loop'])
-        self.rvXMLIvarName = xmlelement.attrib['rvXMLIvarName']
+        self.timeOffset = float(xmlelement.get('timeOffset'))
+        self.duration = float(xmlelement.get('duration'))
+        self.selectedMediaTrackIndex = int(xmlelement.get('selectedMediaTrackIndex'))
+        self.loop = bool(xmlelement.get('loop'))
+        self.rvXMLIvarName = xmlelement.get('rvXMLIvarName')
+
+    def serializexml(self,xmlelement):
+        xmlelement.set('timeOffset', str(self.timeOffset))
+        xmlelement.set('duration', str(self.duration))
+        xmlelement.set('selectedMediaTrackIndex', str(self.selectedMediaTrackIndex))
+        xmlelement.set('loop', str(self.loop))
+        xmlelement.set('rvXMLIvarName', str(self.rvXMLIvarName))

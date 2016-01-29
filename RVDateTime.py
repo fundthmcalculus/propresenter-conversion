@@ -2,7 +2,7 @@ import re
 
 
 class RVDateTime:
-    def __init__(self,datetimestring = None):
+    def __init__(self, datetimestring=None):
         self.year = 1993
         self.month = 10
         self.day = 19
