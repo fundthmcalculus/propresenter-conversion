@@ -39,15 +39,6 @@ class RVPresentationDocument(RVObject):
         # Load variables from XML.
         self.deserializexml(xmlelement)
 
-        # Loop through the child XML nodes and build those.
-        for xmlbiblereference in xmlelement.findall("RVBibleReference"):
-            # Create the Bible reference object.
-            self.biblereference = RVBibleReference(xmlbiblereference)
-
-        # Use XPath to find the arrangements object and the groups object
-        xml_arrangements = xmlelement.find(".//[@rvXMLIvarName='arrangements']")
-        xml_groups = xmlelement.find(".//[@rvXMLIvarName='groups']")
-
     def deserializexml(self,xmlelement):
         """
 
@@ -74,6 +65,19 @@ class RVPresentationDocument(RVObject):
         self.CCLISongNumber = xmlelement.get('CCLISongNumber')
         self.chordChartPath = xmlelement.get('chordChartPath')
 
+        # Loop through the child XML nodes and build those.
+        for xmlbiblereference in xmlelement.findall("RVBibleReference"):
+            # Create the Bible reference object.
+            self.biblereference = RVBibleReference(xmlbiblereference)
+
+        # Use XPath to find the arrangements object and the groups object
+        xml_arrangements = xmlelement.find("./*[@rvXMLIvarName='arrangements']")
+        xml_groups = xmlelement.find("./*[@rvXMLIvarName='groups']")
+
+        # Create the arrangements.
+        for xml_arrange in xml_groups:
+            print(xml_arrange.tag)
+
     def serializexml(self,xmlelement):
         xmlelement.set('versionNumber', str(self.versionNumber))
         xmlelement.set('docType', str(self.docType))
@@ -94,3 +98,5 @@ class RVPresentationDocument(RVObject):
         xmlelement.set('CCLICopyrightYear', str(self.CCLICopyrightYear))
         xmlelement.set('CCLISongNumber', str(self.CCLISongNumber))
         xmlelement.set('chordChartPath', str(self.chordChartPath))
+
+        # TODO - Serialize back out to xml.

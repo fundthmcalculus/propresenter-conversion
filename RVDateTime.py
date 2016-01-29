@@ -14,7 +14,7 @@ class RVDateTime:
 
         # Parse the string.
         if datetimestring is not None and len(datetimestring) > 0:
-            toks = re.split("[\ \-T:]*", datetimestring)
+            toks = re.split('[\ \-T:]*', datetimestring)
             self.year = float(toks[0])
             self.month = float(toks[1])
             self.day = float(toks[2])

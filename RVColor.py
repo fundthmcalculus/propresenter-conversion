@@ -1,5 +1,5 @@
 class RVColor:
-    def __init__(self,RGBAstring = None, R = 0, G = 0, B = 0, A = 1):
+    def __init__(self,RGBAstring=None, R=0, G=0, B=0, A=1):
         # Create instance variables.
         if RGBAstring is not None and len(RGBAstring) > 0:
             toks = RGBAstring.split(" ")

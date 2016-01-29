@@ -14,7 +14,6 @@ class RVBibleReference(RVObject):
         self.verseEnd = 0
         self.rvXMLIvarName = "bibleReference"
 
-
         self.deserializexml(xmlelement)
 
     def deserializexml(self,xmlelement):
