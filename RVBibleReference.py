@@ -1,4 +1,5 @@
 from RVObject import RVObject
+import xml.etree.ElementTree as xmltree
 
 
 class RVBibleReference(RVObject):
@@ -31,7 +32,8 @@ class RVBibleReference(RVObject):
         self.verseEnd = int(xmlelement.get('verseEnd'))
         self.rvXMLIvarName = xmlelement.get('rvXMLIvarName')
 
-    def serializexml(self,xmlelement):
+    def serializexml(self):
+        xmlelement = xmltree.Element('RVBibleReference')
         xmlelement.set('translationAbbreviation', str(self.translationAbbreviation))
         xmlelement.set('translationName', str(self.translationName))
         xmlelement.set('bookName', str(self.bookName))
@@ -41,4 +43,6 @@ class RVBibleReference(RVObject):
         xmlelement.set('verseStart', str(self.verseStart))
         xmlelement.set('verseEnd', str(self.verseEnd))
         xmlelement.set('rvXMLIvarName', str(self.rvXMLIvarName))
+
+        return xmlelement
 

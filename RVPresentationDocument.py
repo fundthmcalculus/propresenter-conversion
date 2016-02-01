@@ -2,6 +2,10 @@ from RVColor import RVColor
 from RVDateTime import RVDateTime
 from RVObject import RVObject
 from RVBibleReference import RVBibleReference
+from RVSlideGrouping import RVSlideGrouping
+from RVTimeline import RVTimeline
+
+import xml.etree.ElementTree as xmltree
 
 
 class RVPresentationDocument(RVObject):
@@ -29,7 +33,8 @@ class RVPresentationDocument(RVObject):
         self.chordChartPath = ""
 
         # Create child objects here.
-        self.biblereference = []
+        self.biblereference = None
+        self.timeline = None
         self.arrangements = []
         self.groups = []
 
@@ -65,20 +70,25 @@ class RVPresentationDocument(RVObject):
         self.CCLISongNumber = xmlelement.get('CCLISongNumber')
         self.chordChartPath = xmlelement.get('chordChartPath')
 
-        # Loop through the child XML nodes and build those.
-        for xmlbiblereference in xmlelement.findall("RVBibleReference"):
-            # Create the Bible reference object.
-            self.biblereference = RVBibleReference(xmlbiblereference)
+        xml_timeline = xmlelement.find("RVTimeline")
+        if xml_timeline is not None:
+            self.timeline = RVTimeline(xml_timeline)
+
+        # Build the bible reference.
+        xml_biblereference = xmlelement.find("RVBibleReference")
+        if xml_biblereference is not None:
+            self.biblereference = RVBibleReference(xml_biblereference)
 
         # Use XPath to find the arrangements object and the groups object
         xml_arrangements = xmlelement.find("./*[@rvXMLIvarName='arrangements']")
         xml_groups = xmlelement.find("./*[@rvXMLIvarName='groups']")
 
         # Create the arrangements.
-        for xml_arrange in xml_groups:
-            print(xml_arrange.tag)
+        for xml_group in xml_groups:
+            self.groups.append(RVSlideGrouping(xml_group))
 
-    def serializexml(self,xmlelement):
+    def serializexml(self):
+        xmlelement = xmltree.Element('RVPresentationDocument')
         xmlelement.set('versionNumber', str(self.versionNumber))
         xmlelement.set('docType', str(self.docType))
         xmlelement.set('width', str(self.width))
@@ -100,3 +110,17 @@ class RVPresentationDocument(RVObject):
         xmlelement.set('chordChartPath', str(self.chordChartPath))
 
         # TODO - Serialize back out to xml.
+        if self.timeline is not None:
+            xmlelement.append(self.timeline.serializexml())
+
+        if self.biblereference is not None:
+            xmlelement.append(self.biblereference.serializexml())
+
+        # Serialize the groups list.
+        rvGroupsArrayElement = xmltree.Element('array')
+        rvGroupsArrayElement.set('rvXMLIvarName', 'groups')
+        for cslidegroup in self.groups:
+            rvGroupsArrayElement.append(cslidegroup.serializexml())
+        xmlelement.append(rvGroupsArrayElement)
+
+        return xmlelement

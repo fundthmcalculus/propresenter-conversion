@@ -29,6 +29,13 @@ def processfile(input_file,output_file):
     # We know this is an element of type: "RVPresentationDocument"
     rvdoc = RVPresentationDocument(xmlroot)
 
+    # Write back out.
+    rvxml = rvdoc.serializexml()
+    # Pretty-print
+    indent(rvxml)
+    rvxmltree = xml.etree.ElementTree.ElementTree(rvxml)
+    rvxmltree.write(output_file)
+
 
 def deserializexml(xmlelement, rvobject):
     # Take the current object and find all variables.
@@ -47,10 +54,39 @@ def removetrailingseparator(folderpath):
         return folderpath
 
 
+def indent(elem, level=0):
+    """
+    Source: https://norwied.wordpress.com/2013/08/27/307/
+    :param elem: [xml.etree.Element]
+    :param level: [int] depth into tree
+    :return: Nothing
+    """
+    i = "\n" + level * "    "
+    if len(elem):
+        if not elem.text or not elem.text.strip():
+            elem.text = i + "    "
+        if not elem.tail or not elem.tail.strip():
+            elem.tail = i
+        for elem in elem:
+            indent(elem, level + 1)
+        if not elem.tail or not elem.tail.strip():
+            elem.tail = i
+    else:
+        if level and (not elem.tail or not elem.tail.strip()):
+            elem.tail = i
+
+
 def main():
     # Get the command-line arguments.
     inputdir = getarg('inputdir')
     outputdir = getarg('outputdir')
+
+    inputfile = getarg('inputfile')
+    outputfile = getarg('outputfile')
+
+    if inputfile is not None:
+        processfile(inputfile, outputfile)
+        return
 
     # Remove any trailing path separators.
     inputdir = removetrailingseparator(inputdir)
@@ -60,8 +96,9 @@ def main():
     for pro6file in glob.glob(inputdir + '/*.pro6'):
         # Take the input file and make the output file.
         filenamewext = os.path.basename(pro6file)
+        filenametpl = os.path.splitext(filenamewext)
         # Process the file
-        processfile(pro6file, outputdir + '/' + filenamewext)
+        processfile(pro6file, outputdir + '/' + filenametpl[0] + '_out' + filenametpl[1])
 
 
 if __name__ == "__main__":

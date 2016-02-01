@@ -2,6 +2,8 @@ from RVObject import RVObject
 from RVColor import RVColor
 import uuid
 
+import xml.etree.ElementTree as xmltree
+
 
 class RVDisplaySlide(RVObject):
     def __init__(self,xmlelement=None):
@@ -38,7 +40,8 @@ class RVDisplaySlide(RVObject):
 
         # TODO - Deserialize child objects
 
-    def serializexml(self,xmlelement):
+    def serializexml(self):
+        xmlelement = xmltree.Element('RVDisplaySlide')
         xmlelement.set('backgroundColor', str(self.backgroundColor))
         xmlelement.set('highlightColor', str(self.highlightColor))
         xmlelement.set('drawingBackgroundColor', str(self.drawingBackgroundColor))
@@ -51,3 +54,5 @@ class RVDisplaySlide(RVObject):
         xmlelement.set('socialItemCount', self.socialItemCount)
 
         # TODO - Serialize child objects.
+
+        return xmlelement

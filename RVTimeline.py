@@ -1,5 +1,7 @@
 from RVObject import RVObject
 
+import xml.etree.ElementTree as xmltree
+
 
 class RVTimeline(RVObject):
     def __init__(self,xmlelement=None):
@@ -23,9 +25,12 @@ class RVTimeline(RVObject):
         self.loop = bool(xmlelement.get('loop'))
         self.rvXMLIvarName = xmlelement.get('rvXMLIvarName')
 
-    def serializexml(self,xmlelement):
+    def serializexml(self):
+        xmlelement = xmltree.Element('RVTimeline')
         xmlelement.set('timeOffset', str(self.timeOffset))
         xmlelement.set('duration', str(self.duration))
         xmlelement.set('selectedMediaTrackIndex', str(self.selectedMediaTrackIndex))
         xmlelement.set('loop', str(self.loop))
         xmlelement.set('rvXMLIvarName', str(self.rvXMLIvarName))
+
+        return xmlelement

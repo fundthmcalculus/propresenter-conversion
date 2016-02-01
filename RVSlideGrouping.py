@@ -1,6 +1,10 @@
 from RVObject import RVObject
 from RVColor import RVColor
+from RVDisplaySlide import RVDisplaySlide
 import uuid
+
+import xml.etree.ElementTree as xmltree
+
 
 class RVSlideGrouping(RVObject):
     def __init__(self,xmlelement=None):
@@ -26,13 +30,17 @@ class RVSlideGrouping(RVObject):
         # Use XPath to find the slides object.
         xml_slides = xmlelement.find("./*[@rvXMLIvarName='slides']")
 
-        for xml_slide in xml_slides:
-            # TODO - Create the actual slide objects.
-            self.slides.append(RVDisplaySlide(xml_slide))
+        if not xml_slides is None:
+            for xml_slide in xml_slides:
+                # TODO - Create the actual slide objects.
+                self.slides.append(RVDisplaySlide(xml_slide))
 
-    def serializexml(self,xmlelement):
+    def serializexml(self):
+        xmlelement = xmltree.Element('RVSlideGrouping')
         xmlelement.set('name', self.name)
         xmlelement.set('uuid', self.uuid)
         xmlelement.set('color', str(self.color))
 
         # TODO - Serialize the child objects back out to XML
+
+        return xmlelement

@@ -3,7 +3,7 @@ class RVObject:
     def deserializexml(self,xmlelement):
         raise NotImplementedError("deserializexml() must be overridden in derived classes!")
 
-    def serializexml(self,xmlelement):
+    def serializexml(self):
         raise NotImplementedError("serializexml() must be overridden in derived classes!")
 
     def __repr__(self):
