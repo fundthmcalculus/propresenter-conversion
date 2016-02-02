@@ -23,7 +23,7 @@ def getarg(argkey):
     return None
 
 
-def processfile(input_file,output_file):
+def processfile(input_file, output_file):
     # Open the file as an XML document, since that is what it is.
     xmlroot = xml.etree.ElementTree.parse(input_file).getroot()
     # We know this is an element of type: "RVPresentationDocument"
@@ -34,7 +34,7 @@ def processfile(input_file,output_file):
     # Pretty-print
     indent(rvxml)
     rvxmltree = xml.etree.ElementTree.ElementTree(rvxml)
-    rvxmltree.write(output_file)
+    rvxmltree.write(output_file, encoding="utf-8", xml_declaration=True)
 
 
 def deserializexml(xmlelement, rvobject):

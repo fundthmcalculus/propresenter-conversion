@@ -12,6 +12,10 @@ class RVTimeline(RVObject):
         self.loop = False
         self.rvXMLIvarName = "timeline"
 
+        # Child objects.
+        self.timeCues = []
+        self.mediaTracks = []
+
         if xmlelement is None:
             return
 
@@ -25,6 +29,17 @@ class RVTimeline(RVObject):
         self.loop = bool(xmlelement.get('loop'))
         self.rvXMLIvarName = xmlelement.get('rvXMLIvarName')
 
+        # Add the time cues object
+        xml_timecues = xmlelement.find("./*[@rvXMLIvarName='timeCues']")
+        for xml_timecue in xml_timecues:
+            # TODO - Support time cues.
+            a = 1
+
+        xml_mediatracks = xmlelement.find("./*[@rvXMLIvarName='mediaTracks']")
+        for xml_mediatracks in xml_mediatracks:
+            # TODO - Support media tracks.
+            a = 1
+
     def serializexml(self):
         xmlelement = xmltree.Element('RVTimeline')
         xmlelement.set('timeOffset', str(self.timeOffset))
@@ -32,5 +47,12 @@ class RVTimeline(RVObject):
         xmlelement.set('selectedMediaTrackIndex', str(self.selectedMediaTrackIndex))
         xmlelement.set('loop', str(self.loop))
         xmlelement.set('rvXMLIvarName', str(self.rvXMLIvarName))
+
+        # Add the child nodes.
+        timecueselement = self.createarray('timeCues')
+        xmlelement.append(timecueselement)
+
+        mediatrackselement = self.createarray('mediaTracks')
+        xmlelement.append(mediatrackselement)
 
         return xmlelement

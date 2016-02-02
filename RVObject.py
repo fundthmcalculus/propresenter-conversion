@@ -1,6 +1,8 @@
+import xml.etree.ElementTree as xmltree
+
 class RVObject:
 
-    def deserializexml(self,xmlelement):
+    def deserializexml(self, xmlelement):
         raise NotImplementedError("deserializexml() must be overridden in derived classes!")
 
     def serializexml(self):
@@ -13,4 +15,10 @@ class RVObject:
             reprstr = reprstr + "   @" + curvar + ": " + repr(getattr(self, curvar))
 
         return reprstr
+
+    @staticmethod
+    def createarray(rvXMLIvarName=""):
+        arrayelement = xmltree.Element('array')
+        arrayelement.set('rvXMLIvarName', rvXMLIvarName)
+        return arrayelement
 

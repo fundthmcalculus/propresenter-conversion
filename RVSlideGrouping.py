@@ -30,9 +30,9 @@ class RVSlideGrouping(RVObject):
         # Use XPath to find the slides object.
         xml_slides = xmlelement.find("./*[@rvXMLIvarName='slides']")
 
-        if not xml_slides is None:
+        if xml_slides is not None:
             for xml_slide in xml_slides:
-                # TODO - Create the actual slide objects.
+                # Create the actual slide objects.
                 self.slides.append(RVDisplaySlide(xml_slide))
 
     def serializexml(self):
@@ -42,5 +42,9 @@ class RVSlideGrouping(RVObject):
         xmlelement.set('color', str(self.color))
 
         # TODO - Serialize the child objects back out to XML
+        slideselement = self.createarray('slides')
+        xmlelement.append(slideselement)
+        for cslide in self.slides:
+            slideselement.append(cslide.serializexml())
 
         return xmlelement
