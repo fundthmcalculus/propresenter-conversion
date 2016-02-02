@@ -1,6 +1,7 @@
 from RVObject import RVObject
 from RVColor import RVColor
 from RVScaleFactor import RVScaleFactor
+from RVRect3D import RVRect3D
 
 import xml.etree.ElementTree as xmltree
 import uuid
@@ -48,6 +49,7 @@ class RVImageElement(RVMediaElement):
         self.scaleSize = RVScaleFactor()
 
         # Add child objects here.
+        self.position = None
 
         if xmlelement is None:
             return
@@ -76,6 +78,9 @@ class RVImageElement(RVMediaElement):
         self.flippedVertically = bool(xmlelement.get('flippedVertically'))
         self.scaleSize = RVScaleFactor(xmlelement.get('scaleSize'))
 
+        xml_pos = xmlelement.find("./RVRect3D[@rvXMLIvarName='position']")
+        self.position = RVRect3D(xml_pos)
+
     def serializexml(self):
         xmlelement = xmltree.Element('RVImageElement')
         super().serializexmlmedia(xmlelement)
@@ -99,6 +104,8 @@ class RVImageElement(RVMediaElement):
         xmlelement.set('scaleSize', str(self.scaleSize))
 
         # TODO - serialize child objects.
+        if self.position is not None:
+            xmlelement.append(self.position.serializexml())
 
         return xmlelement
 

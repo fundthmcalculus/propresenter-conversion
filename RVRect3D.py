@@ -1,12 +1,12 @@
 from RVObject import RVObject
 
 import re
+import xml.etree.ElementTree as xmltree
 
 
 class RVRect3D(RVObject):
     def __init__(self, xmlelement=None):
-        self.rvXMLIvarName = "position"
-
+        self.rvXMLIvarName = ""
         self.x = 0
         self.y = 0
         self.width = 0
@@ -22,12 +22,19 @@ class RVRect3D(RVObject):
         self.rvXMLIvarName = xmlelement.get('rvXMLIvarName')
 
         # Pull out inside text.
-        inner_text = re.split('\{*\}', xmlelement[0])
-        toks = inner_text.split()
+        toks = xmlelement.text.replace("{","").replace("}","").split()
 
         self.x = float(toks[0])
         self.y = float(toks[1])
         self.width = float(toks[2])
         self.height = float(toks[3])
 
+    def serializexml(self):
+        xmlelement = xmltree.Element("RVRect3D")
+        xmlelement.set('rvXMLIvarName', self.rvXMLIvarName)
+        xmlelement.text = str(self)
 
+        return xmlelement
+
+    def __repr__(self):
+        return "{" + str(self.x) + " " + str(self.y) + " " + str(self.width) + " " + str(self.height) + "}"
