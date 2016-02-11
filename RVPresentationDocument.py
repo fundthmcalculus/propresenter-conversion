@@ -1,4 +1,4 @@
-from RVColor import RVColor
+from NSColor import NSColor
 from RVDateTime import RVDateTime
 from RVObject import RVObject
 from RVBibleReference import RVBibleReference
@@ -16,7 +16,7 @@ class RVPresentationDocument(RVObject):
         self.width = 1280
         self.height = 720
         self.usedCount = 0
-        self.backgroundColor = RVColor()
+        self.backgroundColor = NSColor()
         self.drawingBackgroundColor = False
         self.CCLIDisplay = True
         self.lastDateUsed = RVDateTime()
@@ -55,7 +55,7 @@ class RVPresentationDocument(RVObject):
         self.width = int(xmlelement.get('width'))
         self.height = int(xmlelement.get('height'))
         self.usedCount = int(xmlelement.get('usedCount'))
-        self.backgroundColor = RVColor(RGBAstring=xmlelement.get('backgroundColor'))
+        self.backgroundColor = NSColor(RGBAstring=xmlelement.get('backgroundColor'))
         self.CCLIDisplay = bool(xmlelement.get('CCLIDisplay'))
         self.lastDateUsed = RVDateTime(datetimestring=xmlelement.get('lastDateUsed'))
         self.selectedArrangementID = xmlelement.get('selectedArrangementID')

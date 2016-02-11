@@ -1,5 +1,5 @@
 from RVObject import RVObject
-from RVMediaElement import RVMediaElement
+import util
 
 import uuid
 
@@ -47,7 +47,7 @@ class RVMediaCue(RVObject):
         self.rvXMLIvarName = xmlelement.get('rvXMLIvarName')
 
         xml_mediaelement = xmlelement[0]
-        self.mediaelement = RVMediaElement.createmediaelement(xml_mediaelement)
+        self.mediaelement = util.createobject(xml_mediaelement)
 
     def serializexml(self):
         xmlelement = xmltree.Element("RVMediaCue")

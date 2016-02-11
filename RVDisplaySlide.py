@@ -1,15 +1,16 @@
 from RVObject import RVObject
-from RVColor import RVColor
+from NSColor import NSColor
 from RVMediaCue import RVMediaCue
 import uuid
+import util
 
 import xml.etree.ElementTree as xmltree
 
 
 class RVDisplaySlide(RVObject):
     def __init__(self, xmlelement=None):
-        self.backgroundColor = RVColor()
-        self.highlightColor = RVColor()
+        self.backgroundColor = NSColor()
+        self.highlightColor = NSColor()
         self.drawingBackgroundColor = False
         self.enabled = True
         self.hotKey = ""
@@ -22,6 +23,7 @@ class RVDisplaySlide(RVObject):
         # TODO - Create child objects here.
         self.cues = []
         self.mediacue = None
+        self.displayElements = []
 
         if xmlelement is None:
             return
@@ -30,8 +32,8 @@ class RVDisplaySlide(RVObject):
         self.deserializexml(xmlelement)
 
     def deserializexml(self, xmlelement):
-        self.backgroundColor = RVColor(xmlelement.get('backgroundColor'))
-        self.highlightColor = RVColor(xmlelement.get('highlightColor'))
+        self.backgroundColor = NSColor(xmlelement.get('backgroundColor'))
+        self.highlightColor = NSColor(xmlelement.get('highlightColor'))
         self.drawingBackgroundColor = bool(xmlelement.get('drawingBackgroundColor'))
         self.enabled = bool(xmlelement.get('enabled'))
         self.hotKey = xmlelement.get('hotKey')
@@ -41,7 +43,7 @@ class RVDisplaySlide(RVObject):
         self.notes = xmlelement.get('notes')
         self.socialItemCount = xmlelement.get('socialItemCount')
 
-        # TODO - Deserialize child objects
+        # Deserialize child objects
         xml_cues = xmlelement.find("./*[@rvXMLIvarName='cues']")
         if xml_cues is not None:
             for xml_cue in xml_cues:
@@ -51,6 +53,11 @@ class RVDisplaySlide(RVObject):
         xml_cue = xmlelement.find("RVMediaCue")
         if xml_cue is not None:
             self.mediacue = RVMediaCue(xml_cue)
+
+        xml_displayelements = xmlelement.find("./*[@rvXMLIvarName='displayElements']")
+        if xml_displayelements is not None:
+            for xml_dispelem in xml_displayelements:
+                self.displayElements.append(util.createobject(xml_dispelem))
 
     def serializexml(self):
         xmlelement = xmltree.Element('RVDisplaySlide')
@@ -65,7 +72,7 @@ class RVDisplaySlide(RVObject):
         xmlelement.set('notes', self.notes)
         xmlelement.set('socialItemCount', self.socialItemCount)
 
-        # TODO - Serialize child objects.
+        # Serialize child objects.
         if self.mediacue is not None:
             xmlelement.append(self.mediacue.serializexml())
 
@@ -74,5 +81,10 @@ class RVDisplaySlide(RVObject):
             xml_cue_array.append(c_cue.serializexml())
 
         xmlelement.append(xml_cue_array)
+
+        xml_elements = self.createarray('displayElements')
+        for c_dispelem in self.displayElements:
+            xml_elements.append(c_dispelem.serializexl())
+        xmlelement.append(xml_elements)
 
         return xmlelement

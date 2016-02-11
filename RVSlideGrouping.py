@@ -1,5 +1,5 @@
 from RVObject import RVObject
-from RVColor import RVColor
+from NSColor import NSColor
 from RVDisplaySlide import RVDisplaySlide
 import uuid
 
@@ -10,7 +10,7 @@ class RVSlideGrouping(RVObject):
     def __init__(self,xmlelement=None):
         self.name = ""
         self.uuid = str(uuid.uuid4())
-        self.color = RVColor()
+        self.color = NSColor()
 
         # Create child objects here.
         self.slides = []
@@ -25,7 +25,7 @@ class RVSlideGrouping(RVObject):
     def deserializexml(self,xmlelement):
         self.name = xmlelement.get('name')
         self.uuid = xmlelement.get('uuid')
-        self.color = RVColor(xmlelement.get('color'))
+        self.color = NSColor(xmlelement.get('color'))
 
         # Use XPath to find the slides object.
         xml_slides = xmlelement.find("./*[@rvXMLIvarName='slides']")

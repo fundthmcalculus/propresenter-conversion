@@ -1,5 +1,4 @@
 import xml.etree.ElementTree as xmltree
-
 class RVObject:
 
     def deserializexml(self, xmlelement):
@@ -21,4 +20,11 @@ class RVObject:
         arrayelement = xmltree.Element('array')
         arrayelement.set('rvXMLIvarName', rvXMLIvarName)
         return arrayelement
+
+    @staticmethod
+    def createdictionary(rvXMLIvarName=""):
+        arrayelement = xmltree.Element('dictionary')
+        arrayelement.set('rvXMLIvarName', rvXMLIvarName)
+        return arrayelement
+
 
