@@ -10,4 +10,4 @@ class RVScaleFactor:
             self.yscale = float(toks[1])
 
     def __repr__(self):
-        return "{" + str(self.xscale) + " " + str(self.yscale) + "}"
+        return "{" + str(self.xscale) + ", " + str(self.yscale) + "}"

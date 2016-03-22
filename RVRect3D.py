@@ -12,6 +12,8 @@ class RVRect3D(RVObject):
         self.width = 0
         self.height = 0
 
+        self.extras = []
+
         if xmlelement is None:
             return
 
@@ -22,12 +24,14 @@ class RVRect3D(RVObject):
         self.rvXMLIvarName = xmlelement.get('rvXMLIvarName')
 
         # Pull out inside text.
-        toks = xmlelement.text.replace("{","").replace("}","").split()
+        toks = xmlelement.text.replace("{", "").replace("}", "").split()
 
         self.x = float(toks[0])
         self.y = float(toks[1])
-        self.width = float(toks[2])
-        self.height = float(toks[3])
+        self.width = float(toks[-2])
+        self.height = float(toks[-1])
+
+        self.extras = toks[2:-2]
 
     def serializexml(self):
         xmlelement = xmltree.Element("RVRect3D")
@@ -37,4 +41,8 @@ class RVRect3D(RVObject):
         return xmlelement
 
     def __repr__(self):
-        return "{" + str(self.x) + " " + str(self.y) + " " + str(self.width) + " " + str(self.height) + "}"
+        extras_str = " ".join(self.extras)
+        if len(extras_str) > 0:
+            extras_str = " " + extras_str
+
+        return "{" + str(self.x) + " " + str(self.y) + extras_str + " " + str(self.width) + " " + str(self.height) + "}"

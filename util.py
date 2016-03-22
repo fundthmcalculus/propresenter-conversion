@@ -1,21 +1,47 @@
-from NSColor import *
-from NSNumber import *
-from RVBibleReference import *
-from RVDateTime import *
-from RVMediaElement import *
-from RVObject import RVObject
-from RVRect3D import RVRect3D
-from RVScaleFactor import RVScaleFactor
-from RVSlideGrouping import *
-from RVTimeline import RVTimeline
-from shadow import shadow
-from RVEffect import *
+import NSColor
+import NSNumber
+import NSString
+import RVBibleReference
+import RVDateTime
+import RVDisplaySlide
+import RVEffect
+import RVMediaCue
+import RVMediaElement
+import RVObject
+import RVPresentationDocument
+import RVRect3D
+import RVScaleFactor
+import RVSlideGrouping
+import RVTimeline
+import shadow
+
+import types
+import inspect
+
+
+def imports():
+    for name, val in globals().items():
+        if isinstance(val, types.ModuleType):
+            yield val
+
+
+def allclasses():
+    classes = list()
+    for module in imports():
+        classes.extend(inspect.getmembers(module ,inspect.isclass))
+
+    return classes
 
 
 def createobject(xmlelement):
     elementtype = xmlelement.tag
 
-    # Use reflection.
-    obj = globals()[elementtype](xmlelement)
+    # List of imported modules.
+    importedclasses = allclasses()
 
-    return obj
+    # Use reflection.
+    for curclass in importedclasses:
+        if curclass[0] == elementtype:
+            return curclass[1](xmlelement)
+
+    raise Exception("No class with the name '" + elementtype + "' exists or is imported.")

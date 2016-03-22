@@ -34,8 +34,8 @@ class RVDisplaySlide(RVObject):
     def deserializexml(self, xmlelement):
         self.backgroundColor = NSColor(xmlelement.get('backgroundColor'))
         self.highlightColor = NSColor(xmlelement.get('highlightColor'))
-        self.drawingBackgroundColor = bool(xmlelement.get('drawingBackgroundColor'))
-        self.enabled = bool(xmlelement.get('enabled'))
+        self.drawingBackgroundColor = xmlelement.get('drawingBackgroundColor').lower() == 'true'
+        self.enabled = xmlelement.get('enabled').lower() == 'true'
         self.hotKey = xmlelement.get('hotKey')
         self.label = xmlelement.get('label')
         self.UUID = xmlelement.get('UUID')
@@ -48,7 +48,7 @@ class RVDisplaySlide(RVObject):
         if xml_cues is not None:
             for xml_cue in xml_cues:
                 # Create the actual slide objects.
-                self.slides.append(RVMediaCue(xml_cue))
+                self.cues.append(util.createobject(xml_cue))
 
         xml_cue = xmlelement.find("RVMediaCue")
         if xml_cue is not None:
@@ -63,8 +63,8 @@ class RVDisplaySlide(RVObject):
         xmlelement = xmltree.Element('RVDisplaySlide')
         xmlelement.set('backgroundColor', str(self.backgroundColor))
         xmlelement.set('highlightColor', str(self.highlightColor))
-        xmlelement.set('drawingBackgroundColor', str(self.drawingBackgroundColor))
-        xmlelement.set('enabled', str(self.enabled))
+        xmlelement.set('drawingBackgroundColor', str(self.drawingBackgroundColor).lower())
+        xmlelement.set('enabled', str(self.enabled).lower())
         xmlelement.set('hotKey', self.hotKey)
         xmlelement.set('label', self.label)
         xmlelement.set('UUID', self.UUID)
@@ -84,7 +84,7 @@ class RVDisplaySlide(RVObject):
 
         xml_elements = self.createarray('displayElements')
         for c_dispelem in self.displayElements:
-            xml_elements.append(c_dispelem.serializexl())
+            xml_elements.append(c_dispelem.serializexml())
         xmlelement.append(xml_elements)
 
         return xmlelement

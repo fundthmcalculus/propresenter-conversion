@@ -25,5 +25,5 @@ class RVDateTime:
             self.minuteoffset = float(toks[7])
 
     def __repr__(self):
-        return "%04d:%02d:%02dT%02d:%02d:%02d-%02d:%02d" % (self.year, self.month, self.day,
+        return "%04d-%02d-%02dT%02d:%02d:%02d-%02d:%02d" % (self.year, self.month, self.day,
             self.hour, self.minute, self.second, self.houroffset, self.minuteoffset)

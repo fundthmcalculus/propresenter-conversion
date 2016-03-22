@@ -56,7 +56,8 @@ class RVPresentationDocument(RVObject):
         self.height = int(xmlelement.get('height'))
         self.usedCount = int(xmlelement.get('usedCount'))
         self.backgroundColor = NSColor(RGBAstring=xmlelement.get('backgroundColor'))
-        self.CCLIDisplay = bool(xmlelement.get('CCLIDisplay'))
+        self.drawingBackgroundColor = xmlelement.get('drawingBackgroundColor').lower() == 'true'
+        self.CCLIDisplay = xmlelement.get('CCLIDisplay').lower() == 'true'
         self.lastDateUsed = RVDateTime(datetimestring=xmlelement.get('lastDateUsed'))
         self.selectedArrangementID = xmlelement.get('selectedArrangementID')
         self.category = xmlelement.get('category')
@@ -91,11 +92,12 @@ class RVPresentationDocument(RVObject):
         xmlelement = xmltree.Element('RVPresentationDocument')
         xmlelement.set('versionNumber', str(self.versionNumber))
         xmlelement.set('docType', str(self.docType))
+        xmlelement.set('drawingBackgroundColor', str(self.drawingBackgroundColor).lower())
         xmlelement.set('width', str(self.width))
         xmlelement.set('height', str(self.height))
         xmlelement.set('usedCount', str(self.usedCount))
         xmlelement.set('backgroundColor', str(self.backgroundColor))
-        xmlelement.set('CCLIDisplay', str(self.CCLIDisplay))
+        xmlelement.set('CCLIDisplay', str(self.CCLIDisplay).lower())
         xmlelement.set('lastDateUsed', str(self.lastDateUsed))
         xmlelement.set('selectedArrangementID', str(self.selectedArrangementID))
         xmlelement.set('category', str(self.category))
@@ -109,7 +111,7 @@ class RVPresentationDocument(RVObject):
         xmlelement.set('CCLISongNumber', str(self.CCLISongNumber))
         xmlelement.set('chordChartPath', str(self.chordChartPath))
 
-        # TODO - Serialize back out to xml.
+        # Serialize back out to xml.
         if self.timeline is not None:
             xmlelement.append(self.timeline.serializexml())
 

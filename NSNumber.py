@@ -48,12 +48,12 @@ class RVEffectFloatVariable(RVObject):
         self.value = float(xmlelement.get('value'))
 
     def serializexml(self):
-        xmlelement = xmltree.Element('NSNumber')
-        xmlelement.set('type', str(self.type))
+        xmlelement = xmltree.Element('RVEffectFloatVariable')
+        xmlelement.set('type', "{:.0f}".format(self.type))
         xmlelement.set('name', self.name)
-        xmlelement.set('min', str(self.min))
-        xmlelement.set('max', str(self.max))
-        xmlelement.set('defValue', str(self.defValue))
-        xmlelement.set('value', str(self.value))
+        xmlelement.set('min', "{:.6f}".format(self.min))
+        xmlelement.set('max', "{:.6f}".format(self.max))
+        xmlelement.set('defValue', "{:.6f}".format(self.defValue))
+        xmlelement.set('value', "{:.6f}".format(self.value))
 
         return xmlelement

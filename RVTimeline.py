@@ -26,7 +26,7 @@ class RVTimeline(RVObject):
         self.timeOffset = float(xmlelement.get('timeOffset'))
         self.duration = float(xmlelement.get('duration'))
         self.selectedMediaTrackIndex = int(xmlelement.get('selectedMediaTrackIndex'))
-        self.loop = bool(xmlelement.get('loop'))
+        self.loop = xmlelement.get('loop').lower() == 'true'
         self.rvXMLIvarName = xmlelement.get('rvXMLIvarName')
 
         # Add the time cues object
@@ -42,10 +42,10 @@ class RVTimeline(RVObject):
 
     def serializexml(self):
         xmlelement = xmltree.Element('RVTimeline')
-        xmlelement.set('timeOffset', str(self.timeOffset))
-        xmlelement.set('duration', str(self.duration))
+        xmlelement.set('timeOffset', "{:.6f}".format(self.timeOffset))
+        xmlelement.set('duration', "{:.6f}".format(self.duration))
         xmlelement.set('selectedMediaTrackIndex', str(self.selectedMediaTrackIndex))
-        xmlelement.set('loop', str(self.loop))
+        xmlelement.set('loop', str(self.loop).lower())
         xmlelement.set('rvXMLIvarName', str(self.rvXMLIvarName))
 
         # Add the child nodes.

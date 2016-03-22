@@ -25,12 +25,20 @@ def getarg(argkey):
 
 def processfile(input_file, output_file):
     # Open the file as an XML document, since that is what it is.
-    xmlroot = xml.etree.ElementTree.parse(input_file).getroot()
+    xmlelemtree = xml.etree.ElementTree.parse(input_file)
+    xmlroot = xmlelemtree.getroot()
+
+    writexml(xmlroot, output_file=input_file.replace(".pro6","_in.pro6"))
+
     # We know this is an element of type: "RVPresentationDocument"
     rvdoc = RVPresentationDocument(xmlroot)
 
     # Write back out.
     rvxml = rvdoc.serializexml()
+    writexml(rvxml, output_file)
+
+
+def writexml(rvxml, output_file):
     # Pretty-print
     indent(rvxml)
     rvxmltree = xml.etree.ElementTree.ElementTree(rvxml)
