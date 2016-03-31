@@ -1,6 +1,7 @@
 from RVObject import *
 
 import xml.etree.ElementTree as xmltree
+import base64
 
 
 class NSString(RVObject):
@@ -14,6 +15,12 @@ class NSString(RVObject):
 
     def __repr__(self):
         return self.data
+
+    def getdecoded(self):
+        return base64.b64decode(self.data).decode("utf-8")
+
+    def setdecoded(self, s):
+        self.data = base64.b64encode(bytes(s, "utf-8")).decode("utf-8")
 
     def serializexml(self):
         xmlelement = xmltree.Element("NSString")

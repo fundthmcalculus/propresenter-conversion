@@ -1,5 +1,7 @@
 from RVObject import *
 
+from formatutilities import rvnumberformat
+
 import xml.etree.ElementTree as xmltree
 
 
@@ -19,10 +21,13 @@ class NSColor(RVObject):
         self.A = A
 
     def __repr__(self):
-        return str(self.R) + " " + str(self.G) + " " + str(self.B) + " " + str(self.A)
+        return rvnumberformat(self.R) + " " + rvnumberformat(self.G) + " " + rvnumberformat(self.B) + " " + rvnumberformat(self.A)
 
     def serializexml(self):
         xmlelement = xmltree.Element("NSColor")
         xmlelement.text = str(self)
 
         return xmlelement
+
+    def RTFcolorstring(self):
+        return "\\red{:.0f}\\green{:.0f}\\blue{:.0f}".format(self.R*255, self.G*255, self.B*255)

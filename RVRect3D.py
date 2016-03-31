@@ -1,6 +1,6 @@
 from RVObject import RVObject
+from formatutilities import rvnumberformat
 
-import re
 import xml.etree.ElementTree as xmltree
 
 
@@ -9,10 +9,9 @@ class RVRect3D(RVObject):
         self.rvXMLIvarName = ""
         self.x = 0
         self.y = 0
+        self.z = 0
         self.width = 0
         self.height = 0
-
-        self.extras = []
 
         if xmlelement is None:
             return
@@ -28,10 +27,9 @@ class RVRect3D(RVObject):
 
         self.x = float(toks[0])
         self.y = float(toks[1])
-        self.width = float(toks[-2])
-        self.height = float(toks[-1])
-
-        self.extras = toks[2:-2]
+        self.z = float(toks[2])
+        self.width = float(toks[3])
+        self.height = float(toks[4])
 
     def serializexml(self):
         xmlelement = xmltree.Element("RVRect3D")
@@ -41,8 +39,5 @@ class RVRect3D(RVObject):
         return xmlelement
 
     def __repr__(self):
-        extras_str = " ".join(self.extras)
-        if len(extras_str) > 0:
-            extras_str = " " + extras_str
 
-        return "{" + str(self.x) + " " + str(self.y) + extras_str + " " + str(self.width) + " " + str(self.height) + "}"
+        return "{" + rvnumberformat(self.x) + " " + rvnumberformat(self.y) + " " + rvnumberformat(self.z) + " " + rvnumberformat(self.width) + " " + rvnumberformat(self.height) + "}"

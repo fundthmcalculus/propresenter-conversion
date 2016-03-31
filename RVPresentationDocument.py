@@ -84,7 +84,7 @@ class RVPresentationDocument(RVObject):
         xml_arrangements = xmlelement.find("./*[@rvXMLIvarName='arrangements']")
         xml_groups = xmlelement.find("./*[@rvXMLIvarName='groups']")
 
-        # Create the arrangements.
+        # Create the slide groups.
         for xml_group in xml_groups:
             self.groups.append(RVSlideGrouping(xml_group))
 
@@ -119,10 +119,13 @@ class RVPresentationDocument(RVObject):
             xmlelement.append(self.biblereference.serializexml())
 
         # Serialize the groups list.
-        rvGroupsArrayElement = xmltree.Element('array')
-        rvGroupsArrayElement.set('rvXMLIvarName', 'groups')
+        rvGroupsArrayElement = self.createarray('groups')
         for cslidegroup in self.groups:
             rvGroupsArrayElement.append(cslidegroup.serializexml())
         xmlelement.append(rvGroupsArrayElement)
+
+        # Serialize the arrangements list.
+        rvArrangementsArrayElement = self.createarray('arrangements')
+        xmlelement.append(rvArrangementsArrayElement)
 
         return xmlelement

@@ -1,4 +1,6 @@
 import xml.etree.ElementTree as xmltree
+
+
 class RVObject:
 
     def deserializexml(self, xmlelement):
@@ -27,4 +29,9 @@ class RVObject:
         arrayelement.set('rvXMLIvarName', rvXMLIvarName)
         return arrayelement
 
+    @staticmethod
+    def copyobject(obj):
+        # Create a new object of that type.
+        newobj = type(obj)(obj.serializexml())
 
+        return newobj

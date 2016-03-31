@@ -20,7 +20,7 @@ class RVDisplaySlide(RVObject):
         self.notes = ""
         self.socialItemCount = 1
 
-        # TODO - Create child objects here.
+        # Create child objects here.
         self.cues = []
         self.mediacue = None
         self.displayElements = []
@@ -73,14 +73,14 @@ class RVDisplaySlide(RVObject):
         xmlelement.set('socialItemCount', self.socialItemCount)
 
         # Serialize child objects.
-        if self.mediacue is not None:
-            xmlelement.append(self.mediacue.serializexml())
-
         xml_cue_array = self.createarray('cues')
         for c_cue in self.cues:
             xml_cue_array.append(c_cue.serializexml())
 
         xmlelement.append(xml_cue_array)
+
+        if self.mediacue is not None:
+            xmlelement.append(self.mediacue.serializexml())
 
         xml_elements = self.createarray('displayElements')
         for c_dispelem in self.displayElements:

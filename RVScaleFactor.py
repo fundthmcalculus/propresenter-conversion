@@ -1,3 +1,6 @@
+from formatutilities import rvnumberformat
+
+
 class RVScaleFactor:
     def __init__(self, scalestring=None, xscale=1, yscale=1):
         self.xscale = xscale
@@ -10,4 +13,4 @@ class RVScaleFactor:
             self.yscale = float(toks[1])
 
     def __repr__(self):
-        return "{" + str(self.xscale) + ", " + str(self.yscale) + "}"
+        return "{" + rvnumberformat(self.xscale) + ", " + rvnumberformat(self.yscale) + "}"
