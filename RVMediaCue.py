@@ -75,15 +75,23 @@ class RVAudioCue(RVBaseCue):
     def deserializexml(self, xmlelement):
         super().deserializexml(xmlelement)
 
-        xml_mediaelement = xmlelement[0]
-        self.mediaelement = util.createobject(xml_mediaelement)
+        try:
+            xml_mediaelement = xmlelement[0]
+            self.mediaelement = util.createobject(xml_mediaelement)
+        except:
+            a = 1
+            pass
+
+
+    def serializexmlmedia(self, xmlelement):
+        super().serializexmlmedia(xmlelement)
+        if self.mediaelement is not None:
+            xmlelement.append(self.mediaelement.serializexml())
+
 
     def serializexml(self):
         xmlelement = xmltree.Element('RVAudioCue')
         self.serializexmlmedia(xmlelement)
-
-        if self.mediaelement is not None:
-            xmlelement.append(self.mediaelement.serializexml())
 
         return xmlelement
 

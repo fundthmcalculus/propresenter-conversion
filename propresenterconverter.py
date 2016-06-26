@@ -36,7 +36,7 @@ class propresenterconverter:
         xmlelemtree = xml.etree.ElementTree.parse(input_file)
         xmlroot = xmlelemtree.getroot()
 
-        # self.writexml(xmlroot, output_file=input_file.replace(".pro6", "_in.pro6"))
+        self.writexml(xmlroot, output_file=input_file.replace(".pro6", "_in.pro6"))
 
         # We know this is an element of type: "RVPresentationDocument"
         rvdoc = RVPresentationDocument(xmlroot)
@@ -64,7 +64,7 @@ class propresenterconverter:
                 # Adjust its current content to the middle.
                 cslide.displayElements[0].position.x += old_width
 
-                # TODO - Get the previous and next slide data (if they exist).
+                # Get the previous and next slide data (if they exist).
                 if idx > 0:
                     try:
                         previoustext = RVObject.copyobject(allslides[idx - 1].displayElements[0])
@@ -112,7 +112,21 @@ class propresenterconverter:
 
         # Create the tree
         rvxmltree = xml.etree.ElementTree.ElementTree(rvxml)
-        rvxmltree.write(output_file, encoding="utf-8", xml_declaration=True)
+        # Make sure the directory exists.
+        output_dir = os.path.dirname(output_file)
+        if not os.path.exists(output_dir):
+            os.mkdir(output_dir)
+
+        # Write the file.
+        rvxmltree.write(output_file, encoding="utf-8", xml_declaration=False)
+        # Prepend the header.
+        f = open(output_file,'r')
+        contents = f.readlines()
+        f.close()
+        fid = open(output_file, 'w')
+        contents.insert(0,'<?xml version="1.0" encoding="utf-8" standalone="yes"?>\n')
+        fid.writelines(contents)
+        fid.close()
 
     @staticmethod
     def removeinvalidxml(rvxml):
@@ -173,17 +187,7 @@ class propresenterconverter:
         except Exception as e:
             return [filenamewext, e]
 
-    def convert(self):
-        # Get the command-line arguments.
-        inputdir = self.getarg('inputdir')
-        outputdir = self.getarg('outputdir')
-
-        inputfile = self.getarg('inputfile')
-        outputfile = self.getarg('outputfile')
-
-        if inputfile is not None:
-            self.processfile(inputfile, outputfile)
-            return
+    def processdirectory(self, inputdir, outputdir):
 
         # Remove any trailing path separators.
         inputdir = self.removetrailingseparator(inputdir)
@@ -191,7 +195,7 @@ class propresenterconverter:
 
         # Loop through the input directory and process every file.
         pool = multiprocessing.Pool(multiprocessing.cpu_count())
-        failedfiles = pool.starmap(self.convertfile, zip(glob.glob(inputdir + '/*.pro6'),repeat(outputdir)))
+        failedfiles = pool.starmap(self.convertfile, zip(glob.glob(inputdir + '/*.pro6'), repeat(outputdir)))
 
         # Remove all empty file names.
         failedfiles = [f for f in failedfiles if len(f[0]) > 0]
