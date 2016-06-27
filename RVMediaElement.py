@@ -24,6 +24,7 @@ class RVElement(RVObject):
         self.opacity = 1.000000
         self.bezelRadius = 0.000000
         self.rotation = 0.000000
+        self.source = ""
         self.drawingFill = False
         self.drawingShadow = False
         self.drawingStroke = False
@@ -49,6 +50,7 @@ class RVElement(RVObject):
         self.opacity = float(xmlelement.get('opacity'))
         self.bezelRadius = float(xmlelement.get('bezelRadius'))
         self.rotation = float(xmlelement.get('rotation'))
+        self.source = xmlelement.get('source')
         self.drawingFill = xmlelement.get('drawingFill').lower() == 'true'
         self.drawingShadow = xmlelement.get('drawingShadow').lower() == 'true'
         self.drawingStroke = xmlelement.get('drawingStroke').lower() == 'true'
@@ -82,6 +84,7 @@ class RVElement(RVObject):
         xmlelement.set('opacity', "{:.6f}".format(self.opacity))
         xmlelement.set('bezelRadius', "{:.6f}".format(self.bezelRadius))
         xmlelement.set('rotation', "{:.6f}".format(self.rotation))
+        xmlelement.set('source', self.source)
         xmlelement.set('drawingFill', str(self.drawingFill).lower())
         xmlelement.set('drawingShadow', str(self.drawingShadow).lower())
         xmlelement.set('drawingStroke', str(self.drawingStroke).lower())
@@ -105,19 +108,15 @@ class RVElement(RVObject):
 class RVMediaElement(RVElement):
     def __init__(self, xmlelement=None):
         # Default initialize all parameters.
-        self.source = ""
 
         super().__init__(xmlelement)
 
     def deserializexml(self, xmlelement):
         super().deserializexml(xmlelement)
-        # Deserialize from XML
-        self.source = xmlelement.get('source', None)
 
     def serializexml(self):
         xmlelement = xmltree.Element('RVMediaElement')
         super().serializexmlmedia(xmlelement)
-        xmlelement.set('source', self.source)
 
         return xmlelement
 
@@ -352,7 +351,7 @@ class RVTextElement(RVMediaElement):
         self.verticalAlignment = 0
         self.revealType = 0
         self.fillColor = NSColor()
-
+        self.useAllCaps = False
         self.RTFData = NSString()
 
         # Add child objects here.
@@ -366,6 +365,7 @@ class RVTextElement(RVMediaElement):
         self.verticalAlignment = int(xmlelement.get('verticalAlignment'))
         self.revealType = int(xmlelement.get('revealType'))
         self.fillColor = NSColor(xmlelement.get('fillColor'))
+        self.useAllCaps = xmlelement.get('useAllCaps', default='false').lower() == 'true'
         # Deserialize the RTF Data.
         rtf_xml = xmlelement.find("./NSString[@rvXMLIvarName='RTFData']")
         self.RTFData = NSString(xmlelement=rtf_xml)
@@ -377,6 +377,7 @@ class RVTextElement(RVMediaElement):
         xmlelement.set('verticalAlignment', str(self.verticalAlignment))
         xmlelement.set('revealType', str(self.revealType))
         xmlelement.set('fillColor', str(self.fillColor))
+        xmlelement.set('useAllCaps', str(self.useAllCaps).lower())
         xmlelement.append(self.RTFData.serializexml())
 
         return xmlelement

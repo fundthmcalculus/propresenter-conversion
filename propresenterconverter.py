@@ -32,11 +32,12 @@ class propresenterconverter:
     def processfile(self, input_file, output_file):
         # Print which file is being processed.
         print("Converting {0}...".format(input_file))
+
         # Open the file as an XML document, since that is what it is.
         xmlelemtree = xml.etree.ElementTree.parse(input_file)
         xmlroot = xmlelemtree.getroot()
 
-        self.writexml(xmlroot, output_file=input_file.replace(".pro6", "_in.pro6"))
+        #self.writexml(xmlroot, output_file=input_file.replace(".pro6", "_in.pro6"))
 
         # We know this is an element of type: "RVPresentationDocument"
         rvdoc = RVPresentationDocument(xmlroot)
@@ -124,7 +125,7 @@ class propresenterconverter:
         contents = f.readlines()
         f.close()
         fid = open(output_file, 'w')
-        contents.insert(0,'<?xml version="1.0" encoding="utf-8" standalone="yes"?>\n')
+        contents.insert(0,'<?xml version="1.0" encoding="utf-8" ?>\n')
         fid.writelines(contents)
         fid.close()
 
@@ -182,7 +183,7 @@ class propresenterconverter:
         filenametpl = os.path.splitext(filenamewext)
         # Process the file
         try:
-            self.processfile(pro6file, outputdir + '/' + filenametpl[0] + filenametpl[1])
+            self.processfile(pro6file, outputdir + '/' + filenametpl[0] +'_TW'+ filenametpl[1])
             return ["", None]
         except Exception as e:
             return [filenamewext, e]

@@ -17,6 +17,7 @@ class RVPresentationDocument(RVObject):
         self.height = 720
         self.usedCount = 0
         self.backgroundColor = NSColor()
+        self.buildNumber = 15122
         self.drawingBackgroundColor = False
         self.CCLIDisplay = True
         self.lastDateUsed = RVDateTime()
@@ -24,6 +25,7 @@ class RVPresentationDocument(RVObject):
         self.category = "Default"
         self.resourcesDirectory = ""
         self.notes = ""
+        self.os = 2
         self.CCLIAuthor = ""
         self.CCLIArtistCredits = ""
         self.CCLISongTitle = ""
@@ -56,6 +58,7 @@ class RVPresentationDocument(RVObject):
         self.height = int(xmlelement.get('height'))
         self.usedCount = int(xmlelement.get('usedCount'))
         self.backgroundColor = NSColor(RGBAstring=xmlelement.get('backgroundColor'))
+        self.buildNumber = int(xmlelement.get('buildNumber', default=str(self.buildNumber)))
         self.drawingBackgroundColor = xmlelement.get('drawingBackgroundColor').lower() == 'true'
         self.CCLIDisplay = xmlelement.get('CCLIDisplay').lower() == 'true'
         self.lastDateUsed = RVDateTime(datetimestring=xmlelement.get('lastDateUsed'))
@@ -63,6 +66,7 @@ class RVPresentationDocument(RVObject):
         self.category = xmlelement.get('category')
         self.resourcesDirectory = xmlelement.get('resourcesDirectory')
         self.notes = xmlelement.get('notes')
+        self.os = int(xmlelement.get('os', default=str(self.buildNumber)))
         self.CCLIAuthor = xmlelement.get('CCLIAuthor')
         self.CCLIArtistCredits = xmlelement.get('CCLIArtistCredits')
         self.CCLISongTitle = xmlelement.get('CCLISongTitle')
@@ -97,12 +101,14 @@ class RVPresentationDocument(RVObject):
         xmlelement.set('height', str(self.height))
         xmlelement.set('usedCount', str(self.usedCount))
         xmlelement.set('backgroundColor', str(self.backgroundColor))
+        xmlelement.set('buildNumber', str(self.buildNumber))
         xmlelement.set('CCLIDisplay', str(self.CCLIDisplay).lower())
         xmlelement.set('lastDateUsed', str(self.lastDateUsed))
         xmlelement.set('selectedArrangementID', str(self.selectedArrangementID))
         xmlelement.set('category', str(self.category))
         xmlelement.set('resourcesDirectory', str(self.resourcesDirectory))
         xmlelement.set('notes', str(self.notes))
+        xmlelement.set('os', str(self.os))
         xmlelement.set('CCLIAuthor', str(self.CCLIAuthor))
         xmlelement.set('CCLIArtistCredits', str(self.CCLIArtistCredits))
         xmlelement.set('CCLISongTitle', str(self.CCLISongTitle))
