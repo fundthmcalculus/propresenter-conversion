@@ -3,6 +3,7 @@ import xml
 import glob
 import os
 import multiprocessing
+import math
 from itertools import repeat
 
 from RVPresentationDocument import RVPresentationDocument
@@ -37,8 +38,6 @@ class propresenterconverter:
         xmlelemtree = xml.etree.ElementTree.parse(input_file)
         xmlroot = xmlelemtree.getroot()
 
-        #self.writexml(xmlroot, output_file=input_file.replace(".pro6", "_in.pro6"))
-
         # We know this is an element of type: "RVPresentationDocument"
         rvdoc = RVPresentationDocument(xmlroot)
 
@@ -59,37 +58,75 @@ class propresenterconverter:
         allslides = [cslide for cgroup in rvdoc.groups for cslide in cgroup.slides]
 
         # Loop through each one
-        for idx, cslide in enumerate(allslides):
+        for idx, cslide in reversed(list(enumerate(allslides))):
             try:
 
-                # Adjust its current content to the middle.
-                cslide.displayElements[0].position.x += old_width
+                # self.center_highlight_TW(allslides, cslide, idx, old_width)
+                self.walking_highlight_TW(allslides, idx, old_width)
 
-                # Get the previous and next slide data (if they exist).
-                if idx > 0:
-                    try:
-                        previoustext = RVObject.copyobject(allslides[idx - 1].displayElements[0])
-                        # Move it back.
-                        previoustext.position.x -= old_width
-                        # Grey it out.
-                        self.greyouttext(previoustext)
-                        cslide.displayElements.append(previoustext)
-                    except Exception:
-                        # Do nothing
-                        pass
+            except Exception:
+                # Do nothing
+                pass
 
-                if idx < len(allslides) - 1:
-                    try:
-                        nexttext = RVObject.copyobject(allslides[idx + 1].displayElements[0])
-                        # Move it over.
-                        nexttext.position.x += 2 * old_width
-                        # Grey it out.
-                        self.greyouttext(nexttext)
-                        cslide.displayElements.append(nexttext)
-                    except Exception:
-                        # Do nothing
-                        pass
 
+    def walking_highlight_TW(self, allslides, idx, old_width):
+        # Do the walking highlight.
+        # Adjust the master text appropriately
+        previoustext = None
+        nexttext = None
+        base_X = allslides[idx].displayElements[0].position.x
+
+        if idx > 0:
+            previoustext = RVObject.copyobject(allslides[idx - 1].displayElements[0])
+        if idx < len(allslides) - 1:
+            nexttext = RVObject.copyobject(allslides[idx + 1].displayElements[0])
+
+        allslides[idx].displayElements[0].position.x += old_width * (idx % 3)
+        if idx > 0:
+            try:
+                # Move it back - because of the modulo operator, -1 -> +2
+                previoustext.position.x = base_X + old_width * ((idx+2) % 3)
+                # Grey it out.
+                self.greyouttext(previoustext)
+                allslides[idx].displayElements.append(previoustext)
+            except Exception:
+                # Do nothing
+                pass
+        if idx < len(allslides) - 1:
+            try:
+                # Move it over.
+                nexttext.position.x = base_X + old_width * ((idx + 1) % 3)
+                # Grey it out.
+                self.greyouttext(nexttext)
+                allslides[idx].displayElements.append(nexttext)
+            except Exception:
+                # Do nothing
+                pass
+
+
+    def center_highlight_TW(self, allslides, cslide, idx, old_width):
+        # Adjust its current content to the middle.
+        cslide.displayElements[0].position.x += old_width
+        # Get the previous and next slide data (if they exist).
+        if idx > 0:
+            try:
+                previoustext = RVObject.copyobject(allslides[idx - 1].displayElements[0])
+                # Move it back.
+                previoustext.position.x -= old_width
+                # Grey it out.
+                self.greyouttext(previoustext)
+                cslide.displayElements.append(previoustext)
+            except Exception:
+                # Do nothing
+                pass
+        if idx < len(allslides) - 1:
+            try:
+                nexttext = RVObject.copyobject(allslides[idx + 1].displayElements[0])
+                # Move it over.
+                nexttext.position.x += 2 * old_width
+                # Grey it out.
+                self.greyouttext(nexttext)
+                cslide.displayElements.append(nexttext)
             except Exception:
                 # Do nothing
                 pass
