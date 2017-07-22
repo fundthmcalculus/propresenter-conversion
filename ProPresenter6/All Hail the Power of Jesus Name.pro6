@@ -1,0 +1,235 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<RVPresentationDocument versionNumber="600" docType="0" width="1280" height="720" usedCount="0" backgroundColor="0 0 0 1" drawingBackgroundColor="false" CCLIDisplay="true" lastDateUsed="2014-08-17T12:40:51-04:00" selectedArrangementID="" category="Default" resourcesDirectory="" notes="" CCLIAuthor="Edward Perronet, John (adapt) Rippon, Oliver HoldenEdward Perronet, John Rippon, Oliver Holden" CCLIArtistCredits="" CCLISongTitle="All Hail the Power of Jesus Name" CCLIPublisher="Public DomainPublic Domain" CCLICopyrightYear="Public Domain" CCLISongNumber="25400" chordChartPath="">
+    <RVTimeline timeOffset="0.000000" duration="0.000000" selectedMediaTrackIndex="0" loop="false" rvXMLIvarName="timeline">
+        <array rvXMLIvarName="timeCues"/>
+        <array rvXMLIvarName="mediaTracks"/>
+    </RVTimeline>
+    <RVBibleReference translationAbbreviation="" translationName="" bookName="" bookIndex="0" chapterStart="0" chapterEnd="0" verseStart="0" verseEnd="0" rvXMLIvarName="bibleReference"/>
+    <array rvXMLIvarName="groups">
+        <RVSlideGrouping name="" uuid="63A1BDCF-47DD-4299-B283-AB84DC7CDED1" color="0 0 0 0">
+            <array rvXMLIvarName="slides">
+                <RVDisplaySlide backgroundColor="0 0 0 1" highlightColor="0 0 0 0" drawingBackgroundColor="false" enabled="true" hotKey="" label="" UUID="2C5C8ED7-0FC7-4E7A-8E44-2F0FBE25FD51" chordChartPath="" notes="">
+                    <array rvXMLIvarName="cues"/>
+                    <RVMediaCue UUID="FE750B54-9822-49CA-822D-ED66E2E972E1" displayName="Enviroscape Gold Crown-SD.mov" actionType="0" enabled="true" timeStamp="0.000000" delayTime="0.000000" behavior="1" nextCueUUID="" alignment="4" dateAdded="" tags="" rvXMLIvarName="backgroundMediaCue">
+                        <RVVideoElement displayName="Enviroscape Gold Crown-SD.mov" UUID="1E9ED6F2-6D68-4276-AD56-2E7402276216" typeID="0" displayDelay="0.000000" locked="false" persistent="false" fromTemplate="false" opacity="1.000000" source="file://localhost/Users/avteam/Desktop/CMG/August%202014%20CMG%20Mega%20Pack%20MOV%20SD/SD/Enviroscape%20Gold%20Crown-SD.mov" bezelRadius="0.000000" rotation="0.000000" drawingFill="false" drawingShadow="false" drawingStroke="false" fillColor="1 1 1 1" scaleBehavior="3" flippedHorizontally="false" flippedVertically="false" scaleSize="{1, 1}" imageOffset="{0, 0}" manufactureURL="" manufactureName="" format="H.264" audioVolume="1.000000" playRate="1.000000" frameRate="0.000000" playbackBehavior="1" inPoint="0" outPoint="900" endPoint="900" timeScale="30" naturalSize="{1024, 768}" fieldType="0" rvXMLIvarName="element">
+                            <RVRect3D rvXMLIvarName="position">{0 0 0 1024 768}</RVRect3D>
+                            <shadow rvXMLIvarName="shadow">0.000000|0 0 0 0.3333333432674408|{5, -5}</shadow>
+                            <dictionary rvXMLIvarName="stroke">
+                                <NSColor rvXMLDictionaryKey="RVShapeElementStrokeColorKey">0 0 0 1</NSColor>
+                                <NSNumber rvXMLDictionaryKey="RVShapeElementStrokeWidthKey" hint="integer">1</NSNumber>
+                            </dictionary>
+                            <array rvXMLIvarName="effects">
+                                <RVEffect UUID="D4C199A9-64D7-4CCB-8C26-443E7A9C5C03" displayName="Adjust Color">
+                                    <array rvXMLIvarName="effectVariables">
+                                        <RVEffectFloatVariable type="1" name="Hue" min="-3.141593" max="3.141593" defValue="0.000000" value="0.031416"/>
+                                        <RVEffectFloatVariable type="1" name="Saturation" min="0.000000" max="2.000000" defValue="1.000000" value="1.000000"/>
+                                        <RVEffectFloatVariable type="1" name="Brightness" min="-1.000000" max="1.000000" defValue="0.000000" value="0.010000"/>
+                                        <RVEffectFloatVariable type="1" name="Contrast" min="0.000000" max="2.000000" defValue="1.000000" value="1.000000"/>
+                                    </array>
+                                </RVEffect>
+                            </array>
+                        </RVVideoElement>
+                    </RVMediaCue>
+                    <array rvXMLIvarName="displayElements">
+                        <RVTextElement displayName="Default" UUID="006F840B-00DA-40C9-9E56-278CE8482553" typeID="0" displayDelay="0.000000" locked="false" persistent="false" fromTemplate="false" opacity="1.000000" source="" bezelRadius="0.000000" rotation="0.000000" drawingFill="false" drawingShadow="true" drawingStroke="false" fillColor="0 0 0 0" adjustsHeightToFit="false" verticalAlignment="0" revealType="0">
+                            <RVRect3D rvXMLIvarName="position">{38 28 0 1205 664}</RVRect3D>
+                            <shadow rvXMLIvarName="shadow">5.000000|0 0 0 1|{5, -5}</shadow>
+                            <dictionary rvXMLIvarName="stroke">
+                                <NSColor rvXMLDictionaryKey="RVShapeElementStrokeColorKey">0 0 0 0</NSColor>
+                                <NSNumber rvXMLDictionaryKey="RVShapeElementStrokeWidthKey" hint="integer">0</NSNumber>
+                            </dictionary>
+                            <NSString rvXMLIvarName="RTFData">e1xydGYxXGFuc2lcYW5zaWNwZzEyNTJcY29jb2FydGYxMzQ4XGNvY29hc3VicnRmMTcwCntcZm9udHRibFxmMFxmc3dpc3NcZmNoYXJzZXQwIEhlbHZldGljYTt9CntcY29sb3J0Ymw7XHJlZDI1NVxncmVlbjI1NVxibHVlMjU1O30KXHBhcmRcdHg1NjBcdHgxMTIwXHR4MTY4MFx0eDIyNDBcdHgyODAwXHR4MzM2MFx0eDM5MjBcdHg0NDgwXHR4NTA0MFx0eDU2MDBcdHg2MTYwXHR4NjcyMFxwYXJkaXJuYXR1cmFsXHFjCgpcZjBcZnMxNTAgXGNmMSBcb3V0bDBcc3Ryb2tld2lkdGgtNDAgXHN0cm9rZWMxICB9</NSString>
+                        </RVTextElement>
+                    </array>
+                </RVDisplaySlide>
+            </array>
+        </RVSlideGrouping>
+        <RVSlideGrouping name="Verse 1" uuid="C87B7C5F-76D1-412B-89DD-01FAA70AEDA3" color="0 0 1 1">
+            <array rvXMLIvarName="slides">
+                <RVDisplaySlide backgroundColor="0 0 0 1" highlightColor="0 0 0 0" drawingBackgroundColor="false" enabled="true" hotKey="" label="" UUID="AA4A3632-021D-4329-97BC-45B9CC3D37E0" chordChartPath="" notes="">
+                    <array rvXMLIvarName="cues"/>
+                    <array rvXMLIvarName="displayElements">
+                        <RVTextElement displayName="TextElement" UUID="6CC0235E-997B-4187-B002-054CF142208B" typeID="0" displayDelay="0.000000" locked="false" persistent="false" fromTemplate="false" opacity="1.000000" source="" bezelRadius="0.000000" rotation="0.000000" drawingFill="false" drawingShadow="true" drawingStroke="false" fillColor="0 0 0 0" adjustsHeightToFit="false" verticalAlignment="0" revealType="0">
+                            <RVRect3D rvXMLIvarName="position">{12 9 0 1255 701}</RVRect3D>
+                            <shadow rvXMLIvarName="shadow">5.000000|0 0 0 1|{5, -5}</shadow>
+                            <dictionary rvXMLIvarName="stroke">
+                                <NSColor rvXMLDictionaryKey="RVShapeElementStrokeColorKey">0 0 0 0</NSColor>
+                                <NSNumber rvXMLDictionaryKey="RVShapeElementStrokeWidthKey" hint="integer">0</NSNumber>
+                            </dictionary>
+                            <NSString rvXMLIvarName="RTFData">e1xydGYxXGFuc2lcYW5zaWNwZzEyNTJcY29jb2FydGYxMzQ4XGNvY29hc3VicnRmMTcwCntcZm9udHRibFxmMFxmc3dpc3NcZmNoYXJzZXQwIEhlbHZldGljYTt9CntcY29sb3J0Ymw7XHJlZDI1NVxncmVlbjI1NVxibHVlMjU1O30KXHBhcmRcdHg1NjBcdHgxMTIwXHR4MTY4MFx0eDIyNDBcdHgyODAwXHR4MzM2MFx0eDM5MjBcdHg0NDgwXHR4NTA0MFx0eDU2MDBcdHg2MTYwXHR4NjcyMFxwYXJkaXJuYXR1cmFsXHFjCgpcZjBcZnMxNTAgXGNmMSBcb3V0bDBcc3Ryb2tld2lkdGgtNDAgXHN0cm9rZWMxIEFsbCBoYWlsIHRoZSBwb3dlciBcCm9mIEplc3VzJyBuYW1lXAogTGV0IGFuZ2VscyBwcm9zdHJhdGUgZmFsbFwKQnJpbmcgZm9ydGggdGhlIHJveWFsIGRpYWRlbVwKYW5kIENyb3duIEhpbSBMb3JkIG9mIGFsbH0=</NSString>
+                        </RVTextElement>
+                    </array>
+                </RVDisplaySlide>
+                <RVDisplaySlide backgroundColor="0 0 0 1" highlightColor="0 0 0 0" drawingBackgroundColor="false" enabled="true" hotKey="" label="" UUID="CAE84A15-EC75-410D-878B-CB0DE8EB0200" chordChartPath="" notes="">
+                    <array rvXMLIvarName="cues"/>
+                    <array rvXMLIvarName="displayElements">
+                        <RVTextElement displayName="TextElement" UUID="93CEB476-31D7-4339-9C3A-DBCAC728055D" typeID="0" displayDelay="0.000000" locked="false" persistent="false" fromTemplate="false" opacity="1.000000" source="" bezelRadius="0.000000" rotation="0.000000" drawingFill="false" drawingShadow="true" drawingStroke="false" fillColor="0 0 0 0" adjustsHeightToFit="false" verticalAlignment="0" revealType="0">
+                            <RVRect3D rvXMLIvarName="position">{12 9 0 1255 701}</RVRect3D>
+                            <shadow rvXMLIvarName="shadow">5.000000|0 0 0 1|{5, -5}</shadow>
+                            <dictionary rvXMLIvarName="stroke">
+                                <NSColor rvXMLDictionaryKey="RVShapeElementStrokeColorKey">0 0 0 0</NSColor>
+                                <NSNumber rvXMLDictionaryKey="RVShapeElementStrokeWidthKey" hint="integer">0</NSNumber>
+                            </dictionary>
+                            <NSString rvXMLIvarName="RTFData">e1xydGYxXGFuc2lcYW5zaWNwZzEyNTJcY29jb2FydGYxMzQ4XGNvY29hc3VicnRmMTcwCntcZm9udHRibFxmMFxmc3dpc3NcZmNoYXJzZXQwIEhlbHZldGljYTt9CntcY29sb3J0Ymw7XHJlZDI1NVxncmVlbjI1NVxibHVlMjU1O30KXHBhcmRcdHg1NjBcdHgxMTIwXHR4MTY4MFx0eDIyNDBcdHgyODAwXHR4MzM2MFx0eDM5MjBcdHg0NDgwXHR4NTA0MFx0eDU2MDBcdHg2MTYwXHR4NjcyMFxwYXJkaXJuYXR1cmFsXHFjCgpcZjBcZnMxNTAgXGNmMSBcb3V0bDBcc3Ryb2tld2lkdGgtNDAgXHN0cm9rZWMxIEJyaW5nIGZvcnRoIHRoZSByb3lhbCBkaWFkZW0gXAphbmQgQ3Jvd24gSGltIExvcmQgb2YgYWxsfQ==</NSString>
+                        </RVTextElement>
+                    </array>
+                </RVDisplaySlide>
+            </array>
+        </RVSlideGrouping>
+        <RVSlideGrouping name="Verse 2" uuid="23034B6F-943F-41BA-9994-8FA9DEF2CD70" color="0 1 0 1">
+            <array rvXMLIvarName="slides">
+                <RVDisplaySlide backgroundColor="0 0 0 1" highlightColor="0 0 0 0" drawingBackgroundColor="false" enabled="true" hotKey="" label="" UUID="0476687D-68A5-4784-937F-56EF1B8D1232" chordChartPath="" notes="">
+                    <array rvXMLIvarName="cues"/>
+                    <array rvXMLIvarName="displayElements">
+                        <RVTextElement displayName="TextElement" UUID="ABCA8BC3-19D9-4817-A7B3-587D9047B9DC" typeID="0" displayDelay="0.000000" locked="false" persistent="false" fromTemplate="false" opacity="1.000000" source="" bezelRadius="0.000000" rotation="0.000000" drawingFill="false" drawingShadow="true" drawingStroke="false" fillColor="0 0 0 0" adjustsHeightToFit="false" verticalAlignment="0" revealType="0">
+                            <RVRect3D rvXMLIvarName="position">{12 9 0 1255 701}</RVRect3D>
+                            <shadow rvXMLIvarName="shadow">5.000000|0 0 0 1|{5, -5}</shadow>
+                            <dictionary rvXMLIvarName="stroke">
+                                <NSColor rvXMLDictionaryKey="RVShapeElementStrokeColorKey">0 0 0 0</NSColor>
+                                <NSNumber rvXMLDictionaryKey="RVShapeElementStrokeWidthKey" hint="integer">0</NSNumber>
+                            </dictionary>
+                            <NSString rvXMLIvarName="RTFData">e1xydGYxXGFuc2lcYW5zaWNwZzEyNTJcY29jb2FydGYxMzQ4XGNvY29hc3VicnRmMTcwCntcZm9udHRibFxmMFxmc3dpc3NcZmNoYXJzZXQwIEhlbHZldGljYTt9CntcY29sb3J0Ymw7XHJlZDI1NVxncmVlbjI1NVxibHVlMjU1O30KXHBhcmRcdHg1NjBcdHgxMTIwXHR4MTY4MFx0eDIyNDBcdHgyODAwXHR4MzM2MFx0eDM5MjBcdHg0NDgwXHR4NTA0MFx0eDU2MDBcdHg2MTYwXHR4NjcyMFxwYXJkaXJuYXR1cmFsXHFjCgpcZjBcZnMxNTAgXGNmMSBcb3V0bDBcc3Ryb2tld2lkdGgtNDAgXHN0cm9rZWMxIFllIGNob3NlbiBzZWVkIFwKb2YgSXNyYWVsJ3MgcmFjZSwgXAoJeWUgcmFuc29tZWQgZnJvbSB0aGUgZmFsbCwgXAoJaGFpbCBoaW0gd2hvIHNhdmVzIHlvdVwKIGJ5IGhpcyBncmFjZSwgXAoJYW5kIGNyb3duIGhpbSBMb3JkIG9mIGFsbC59</NSString>
+                        </RVTextElement>
+                    </array>
+                </RVDisplaySlide>
+                <RVDisplaySlide backgroundColor="0 0 0 1" highlightColor="0 0 0 0" drawingBackgroundColor="false" enabled="true" hotKey="" label="" UUID="2BF1123A-3459-47FE-9490-FD6BEE104EF6" chordChartPath="" notes="">
+                    <array rvXMLIvarName="cues"/>
+                    <array rvXMLIvarName="displayElements">
+                        <RVTextElement displayName="TextElement" UUID="45EB532F-C148-4393-974C-4B35B228F308" typeID="0" displayDelay="0.000000" locked="false" persistent="false" fromTemplate="false" opacity="1.000000" source="" bezelRadius="0.000000" rotation="0.000000" drawingFill="false" drawingShadow="true" drawingStroke="false" fillColor="0 0 0 0" adjustsHeightToFit="false" verticalAlignment="0" revealType="0">
+                            <RVRect3D rvXMLIvarName="position">{12 9 0 1255 701}</RVRect3D>
+                            <shadow rvXMLIvarName="shadow">5.000000|0 0 0 1|{5, -5}</shadow>
+                            <dictionary rvXMLIvarName="stroke">
+                                <NSColor rvXMLDictionaryKey="RVShapeElementStrokeColorKey">0 0 0 0</NSColor>
+                                <NSNumber rvXMLDictionaryKey="RVShapeElementStrokeWidthKey" hint="integer">0</NSNumber>
+                            </dictionary>
+                            <NSString rvXMLIvarName="RTFData">e1xydGYxXGFuc2lcYW5zaWNwZzEyNTJcY29jb2FydGYxMzQ4XGNvY29hc3VicnRmMTcwCntcZm9udHRibFxmMFxmc3dpc3NcZmNoYXJzZXQwIEhlbHZldGljYTt9CntcY29sb3J0Ymw7XHJlZDI1NVxncmVlbjI1NVxibHVlMjU1O30KXHBhcmRcdHg1NjBcdHgxMTIwXHR4MTY4MFx0eDIyNDBcdHgyODAwXHR4MzM2MFx0eDM5MjBcdHg0NDgwXHR4NTA0MFx0eDU2MDBcdHg2MTYwXHR4NjcyMFxwYXJkaXJuYXR1cmFsXHFjCgpcZjBcZnMxNTAgXGNmMSBcb3V0bDBcc3Ryb2tld2lkdGgtNDAgXHN0cm9rZWMxIEhhaWwgaGltIHdobyBzYXZlcyB5b3UgXApieSBoaXMgZ3JhY2UsIFwKCWFuZCBjcm93biBoaW0gTG9yZCBvZiBhbGwufQ==</NSString>
+                        </RVTextElement>
+                    </array>
+                </RVDisplaySlide>
+            </array>
+        </RVSlideGrouping>
+        <RVSlideGrouping name="Verse 4" uuid="9B3DD71B-B49D-4FAE-B86C-9FAEB24B05AB" color="0.5 0 0.5 1">
+            <array rvXMLIvarName="slides">
+                <RVDisplaySlide backgroundColor="0 0 0 1" highlightColor="0 0 0 0" drawingBackgroundColor="false" enabled="true" hotKey="" label="" UUID="4E5129EA-AF5D-42D6-B286-B391BEE14E47" chordChartPath="" notes="">
+                    <array rvXMLIvarName="cues"/>
+                    <array rvXMLIvarName="displayElements">
+                        <RVTextElement displayName="TextElement" UUID="7831850A-5668-40AE-8A2D-84845512FB50" typeID="0" displayDelay="0.000000" locked="false" persistent="false" fromTemplate="false" opacity="1.000000" source="" bezelRadius="0.000000" rotation="0.000000" drawingFill="false" drawingShadow="true" drawingStroke="false" fillColor="0 0 0 0" adjustsHeightToFit="false" verticalAlignment="0" revealType="0">
+                            <RVRect3D rvXMLIvarName="position">{12 9 0 1255 701}</RVRect3D>
+                            <shadow rvXMLIvarName="shadow">5.000000|0 0 0 1|{5, -5}</shadow>
+                            <dictionary rvXMLIvarName="stroke">
+                                <NSColor rvXMLDictionaryKey="RVShapeElementStrokeColorKey">0 0 0 0</NSColor>
+                                <NSNumber rvXMLDictionaryKey="RVShapeElementStrokeWidthKey" hint="integer">0</NSNumber>
+                            </dictionary>
+                            <NSString rvXMLIvarName="RTFData">e1xydGYxXGFuc2lcYW5zaWNwZzEyNTJcY29jb2FydGYxMzQ4XGNvY29hc3VicnRmMTcwCntcZm9udHRibFxmMFxmc3dpc3NcZmNoYXJzZXQwIEhlbHZldGljYTt9CntcY29sb3J0Ymw7XHJlZDI1NVxncmVlbjI1NVxibHVlMjU1O30KXHBhcmRcdHg1NjBcdHgxMTIwXHR4MTY4MFx0eDIyNDBcdHgyODAwXHR4MzM2MFx0eDM5MjBcdHg0NDgwXHR4NTA0MFx0eDU2MDBcdHg2MTYwXHR4NjcyMFxwYXJkaXJuYXR1cmFsXHFjCgpcZjBcZnMxNTAgXGNmMSBcb3V0bDBcc3Ryb2tld2lkdGgtNDAgXHN0cm9rZWMxIExldCBldmVyeSBraW5kcmVkLCBcCmV2ZXJ5IHRyaWJlIG9uIHRoaXNcCiB0ZXJyZXN0cmlhbCBiYWxsLCBcCgl0byBoaW0gYWxsIG1hamVzdHkgYXNjcmliZSwgXAoJYW5kIGNyb3duIGhpbSBMb3JkIG9mIGFsbC4gIH0=</NSString>
+                        </RVTextElement>
+                    </array>
+                </RVDisplaySlide>
+            </array>
+        </RVSlideGrouping>
+        <RVSlideGrouping name="Verse 4" uuid="B3398FFC-214B-4AA2-BF1D-E44D5A5E49D2" color="0.5 0 0.5 1">
+            <array rvXMLIvarName="slides">
+                <RVDisplaySlide backgroundColor="0 0 0 1" highlightColor="0 0 0 0" drawingBackgroundColor="false" enabled="true" hotKey="" label="" UUID="5BEB4701-9121-485E-B503-5C4A765BE013" chordChartPath="" notes="">
+                    <array rvXMLIvarName="cues"/>
+                    <array rvXMLIvarName="displayElements">
+                        <RVTextElement displayName="TextElement" UUID="36239EDE-5ED1-488D-9C5E-868DD34B8125" typeID="0" displayDelay="0.000000" locked="false" persistent="false" fromTemplate="false" opacity="1.000000" source="" bezelRadius="0.000000" rotation="0.000000" drawingFill="false" drawingShadow="true" drawingStroke="false" fillColor="0 0 0 0" adjustsHeightToFit="false" verticalAlignment="0" revealType="0">
+                            <RVRect3D rvXMLIvarName="position">{12 9 0 1255 701}</RVRect3D>
+                            <shadow rvXMLIvarName="shadow">5.000000|0 0 0 1|{5, -5}</shadow>
+                            <dictionary rvXMLIvarName="stroke">
+                                <NSColor rvXMLDictionaryKey="RVShapeElementStrokeColorKey">0 0 0 0</NSColor>
+                                <NSNumber rvXMLDictionaryKey="RVShapeElementStrokeWidthKey" hint="integer">0</NSNumber>
+                            </dictionary>
+                            <NSString rvXMLIvarName="RTFData">e1xydGYxXGFuc2lcYW5zaWNwZzEyNTJcY29jb2FydGYxMzQ4XGNvY29hc3VicnRmMTcwCntcZm9udHRibFxmMFxmc3dpc3NcZmNoYXJzZXQwIEhlbHZldGljYTt9CntcY29sb3J0Ymw7XHJlZDI1NVxncmVlbjI1NVxibHVlMjU1O30KXHBhcmRcdHg1NjBcdHgxMTIwXHR4MTY4MFx0eDIyNDBcdHgyODAwXHR4MzM2MFx0eDM5MjBcdHg0NDgwXHR4NTA0MFx0eDU2MDBcdHg2MTYwXHR4NjcyMFxwYXJkaXJuYXR1cmFsXHFjCgpcZjBcZnMxNTAgXGNmMSBcb3V0bDBcc3Ryb2tld2lkdGgtNDAgXHN0cm9rZWMxIFRvIGhpbSBhbGwgbWFqZXN0eSBhc2NyaWJlLCBcCglhbmQgY3Jvd24gaGltIExvcmQgb2YgYWxsLiB9</NSString>
+                        </RVTextElement>
+                    </array>
+                </RVDisplaySlide>
+            </array>
+        </RVSlideGrouping>
+        <RVSlideGrouping name="Verse 5" uuid="69EED212-9C57-4631-AFC7-1B9F1B2DC381" color="0.6000000238418579 0.4000000059604645 0.2000000029802322 1">
+            <array rvXMLIvarName="slides">
+                <RVDisplaySlide backgroundColor="0 0 0 1" highlightColor="0 0 0 0" drawingBackgroundColor="false" enabled="true" hotKey="" label="" UUID="640C3ADD-D045-4A15-9B56-8DDE756BFB68" chordChartPath="" notes="">
+                    <array rvXMLIvarName="cues"/>
+                    <array rvXMLIvarName="displayElements">
+                        <RVTextElement displayName="TextElement" UUID="BCBBD7D8-E02F-4325-B46A-CAA6BAD69AB8" typeID="0" displayDelay="0.000000" locked="false" persistent="false" fromTemplate="false" opacity="1.000000" source="" bezelRadius="0.000000" rotation="0.000000" drawingFill="false" drawingShadow="true" drawingStroke="false" fillColor="0 0 0 0" adjustsHeightToFit="false" verticalAlignment="0" revealType="0">
+                            <RVRect3D rvXMLIvarName="position">{12 9 0 1255 701}</RVRect3D>
+                            <shadow rvXMLIvarName="shadow">5.000000|0 0 0 1|{5, -5}</shadow>
+                            <dictionary rvXMLIvarName="stroke">
+                                <NSColor rvXMLDictionaryKey="RVShapeElementStrokeColorKey">0 0 0 0</NSColor>
+                                <NSNumber rvXMLDictionaryKey="RVShapeElementStrokeWidthKey" hint="integer">0</NSNumber>
+                            </dictionary>
+                            <NSString rvXMLIvarName="RTFData">e1xydGYxXGFuc2lcYW5zaWNwZzEyNTJcY29jb2FydGYxMzQ4XGNvY29hc3VicnRmMTcwCntcZm9udHRibFxmMFxmc3dpc3NcZmNoYXJzZXQwIEhlbHZldGljYTt9CntcY29sb3J0Ymw7XHJlZDI1NVxncmVlbjI1NVxibHVlMjU1O30KXHBhcmRcdHg1NjBcdHgxMTIwXHR4MTY4MFx0eDIyNDBcdHgyODAwXHR4MzM2MFx0eDM5MjBcdHg0NDgwXHR4NTA0MFx0eDU2MDBcdHg2MTYwXHR4NjcyMFxwYXJkaXJuYXR1cmFsXHFjCgpcZjBcZnMxNTAgXGNmMSBcb3V0bDBcc3Ryb2tld2lkdGgtNDAgXHN0cm9rZWMxIE8sIHRoYXQgd2l0aCB5b25kZXIgXApzYWNyZWQgdGhyb25nXApXZSBhdCBIaXMgZmVldCBtYXkgZmFsbCFcCldlJ2xsIGpvaW4gdGhlIFwKZXZlcmxhc3Rpbmcgc29uZ1wKQW5kIGNyb3duIEhpbSBMb3JkIG9mIGFsbH0=</NSString>
+                        </RVTextElement>
+                    </array>
+                </RVDisplaySlide>
+                <RVDisplaySlide backgroundColor="0 0 0 1" highlightColor="0 0 0 0" drawingBackgroundColor="false" enabled="true" hotKey="" label="" UUID="0A1A4851-BE6A-42B1-9736-784D0DDBB7CD" chordChartPath="" notes="">
+                    <array rvXMLIvarName="cues"/>
+                    <array rvXMLIvarName="displayElements">
+                        <RVTextElement displayName="TextElement" UUID="4EDAD4E4-54F1-4A41-BB8C-5638027022DB" typeID="0" displayDelay="0.000000" locked="false" persistent="false" fromTemplate="false" opacity="1.000000" source="" bezelRadius="0.000000" rotation="0.000000" drawingFill="false" drawingShadow="true" drawingStroke="false" fillColor="0 0 0 0" adjustsHeightToFit="false" verticalAlignment="0" revealType="0">
+                            <RVRect3D rvXMLIvarName="position">{12 9 0 1255 701}</RVRect3D>
+                            <shadow rvXMLIvarName="shadow">5.000000|0 0 0 1|{5, -5}</shadow>
+                            <dictionary rvXMLIvarName="stroke">
+                                <NSColor rvXMLDictionaryKey="RVShapeElementStrokeColorKey">0 0 0 0</NSColor>
+                                <NSNumber rvXMLDictionaryKey="RVShapeElementStrokeWidthKey" hint="integer">0</NSNumber>
+                            </dictionary>
+                            <NSString rvXMLIvarName="RTFData">e1xydGYxXGFuc2lcYW5zaWNwZzEyNTJcY29jb2FydGYxMzQ4XGNvY29hc3VicnRmMTcwCntcZm9udHRibFxmMFxmc3dpc3NcZmNoYXJzZXQwIEhlbHZldGljYTt9CntcY29sb3J0Ymw7XHJlZDI1NVxncmVlbjI1NVxibHVlMjU1O30KXHBhcmRcdHg1NjBcdHgxMTIwXHR4MTY4MFx0eDIyNDBcdHgyODAwXHR4MzM2MFx0eDM5MjBcdHg0NDgwXHR4NTA0MFx0eDU2MDBcdHg2MTYwXHR4NjcyMFxwYXJkaXJuYXR1cmFsXHFjCgpcZjBcZnMxNTAgXGNmMSBcb3V0bDBcc3Ryb2tld2lkdGgtNDAgXHN0cm9rZWMxIFdlJ2xsIGpvaW4gdGhlIFwKZXZlcmxhc3Rpbmcgc29uZ1wKQW5kIGNyb3duIEhpbSBMb3JkIG9mIGFsbCF9</NSString>
+                        </RVTextElement>
+                    </array>
+                </RVDisplaySlide>
+            </array>
+        </RVSlideGrouping>
+        <RVSlideGrouping name="Chorus" uuid="7009F24F-CCAE-47EB-BC45-511975EAEA14" color="1 0 0 1">
+            <array rvXMLIvarName="slides">
+                <RVDisplaySlide backgroundColor="0 0 0 1" highlightColor="0 0 0 0" drawingBackgroundColor="false" enabled="false" hotKey="" label="" UUID="A43C60BD-9B2A-4929-A491-ADE55376280F" chordChartPath="" notes="">
+                    <array rvXMLIvarName="cues"/>
+                    <array rvXMLIvarName="displayElements">
+                        <RVTextElement displayName="TextElement" UUID="8B69D74C-FA2A-4EFF-841F-855E4FF2673E" typeID="0" displayDelay="0.000000" locked="false" persistent="false" fromTemplate="false" opacity="1.000000" source="" bezelRadius="0.000000" rotation="0.000000" drawingFill="false" drawingShadow="true" drawingStroke="false" fillColor="0 0 0 0" adjustsHeightToFit="false" verticalAlignment="0" revealType="0">
+                            <RVRect3D rvXMLIvarName="position">{12 9 0 1255 701}</RVRect3D>
+                            <shadow rvXMLIvarName="shadow">5.000000|0 0 0 1|{5, -5}</shadow>
+                            <dictionary rvXMLIvarName="stroke">
+                                <NSColor rvXMLDictionaryKey="RVShapeElementStrokeColorKey">0 0 0 0</NSColor>
+                                <NSNumber rvXMLDictionaryKey="RVShapeElementStrokeWidthKey" hint="integer">0</NSNumber>
+                            </dictionary>
+                            <NSString rvXMLIvarName="RTFData">e1xydGYxXGFuc2lcYW5zaWNwZzEyNTJcY29jb2FydGYxMzQ4XGNvY29hc3VicnRmMTcwCntcZm9udHRibFxmMFxmc3dpc3NcZmNoYXJzZXQwIEhlbHZldGljYTt9CntcY29sb3J0Ymw7XHJlZDI1NVxncmVlbjI1NVxibHVlMjU1O30KXHBhcmRcdHg1NjBcdHgxMTIwXHR4MTY4MFx0eDIyNDBcdHgyODAwXHR4MzM2MFx0eDM5MjBcdHg0NDgwXHR4NTA0MFx0eDU2MDBcdHg2MTYwXHR4NjcyMFxwYXJkaXJuYXR1cmFsXHFjCgpcZjBcZnMxNTAgXGNmMSBcb3V0bDBcc3Ryb2tld2lkdGgtNDAgXHN0cm9rZWMxIExvcmQgb2YgYWxsLCBZb3UgYXJlIExvcmQgb2YgYWxsXApMb3JkIG9mIGFsbCwgWW91IGFyZSBMb3JkIG9mIGFsbH0=</NSString>
+                        </RVTextElement>
+                    </array>
+                </RVDisplaySlide>
+            </array>
+        </RVSlideGrouping>
+        <RVSlideGrouping name="Chorus" uuid="233F3D7C-10BE-48F0-B021-1884E0361E19" color="1 0 0 1">
+            <array rvXMLIvarName="slides">
+                <RVDisplaySlide backgroundColor="0 0 0 1" highlightColor="0 0 0 0" drawingBackgroundColor="false" enabled="false" hotKey="" label="" UUID="1B70212E-D857-4E97-BBFE-45933A09257E" chordChartPath="" notes="">
+                    <array rvXMLIvarName="cues"/>
+                    <array rvXMLIvarName="displayElements">
+                        <RVTextElement displayName="TextElement" UUID="B3AC1162-6FCB-4611-A883-BCE2655C4BC8" typeID="0" displayDelay="0.000000" locked="false" persistent="false" fromTemplate="false" opacity="1.000000" source="" bezelRadius="0.000000" rotation="0.000000" drawingFill="false" drawingShadow="true" drawingStroke="false" fillColor="0 0 0 0" adjustsHeightToFit="false" verticalAlignment="0" revealType="0">
+                            <RVRect3D rvXMLIvarName="position">{12 9 0 1255 701}</RVRect3D>
+                            <shadow rvXMLIvarName="shadow">5.000000|0 0 0 1|{5, -5}</shadow>
+                            <dictionary rvXMLIvarName="stroke">
+                                <NSColor rvXMLDictionaryKey="RVShapeElementStrokeColorKey">0 0 0 0</NSColor>
+                                <NSNumber rvXMLDictionaryKey="RVShapeElementStrokeWidthKey" hint="integer">0</NSNumber>
+                            </dictionary>
+                            <NSString rvXMLIvarName="RTFData">e1xydGYxXGFuc2lcYW5zaWNwZzEyNTJcY29jb2FydGYxMzQ4XGNvY29hc3VicnRmMTcwCntcZm9udHRibFxmMFxmc3dpc3NcZmNoYXJzZXQwIEhlbHZldGljYTt9CntcY29sb3J0Ymw7XHJlZDI1NVxncmVlbjI1NVxibHVlMjU1O30KXHBhcmRcdHg1NjBcdHgxMTIwXHR4MTY4MFx0eDIyNDBcdHgyODAwXHR4MzM2MFx0eDM5MjBcdHg0NDgwXHR4NTA0MFx0eDU2MDBcdHg2MTYwXHR4NjcyMFxwYXJkaXJuYXR1cmFsXHFjCgpcZjBcZnMxNTAgXGNmMSBcb3V0bDBcc3Ryb2tld2lkdGgtNDAgXHN0cm9rZWMxIExvcmQgb2YgYWxsLCBZb3UgYXJlIExvcmQgb2YgYWxsXApMb3JkIG9mIGFsbCwgWW91IGFyZSBMb3JkIG9mIGFsbH0=</NSString>
+                        </RVTextElement>
+                    </array>
+                </RVDisplaySlide>
+            </array>
+        </RVSlideGrouping>
+        <RVSlideGrouping name="Chorus" uuid="4063F29C-8BDE-4C45-8DF4-9EE4948D1CCC" color="1 0 0 1">
+            <array rvXMLIvarName="slides">
+                <RVDisplaySlide backgroundColor="0 0 0 1" highlightColor="0 0 0 0" drawingBackgroundColor="false" enabled="false" hotKey="" label="" UUID="34128999-F6B8-441D-AF48-739B4BE94597" chordChartPath="" notes="">
+                    <array rvXMLIvarName="cues"/>
+                    <array rvXMLIvarName="displayElements">
+                        <RVTextElement displayName="TextElement" UUID="C50CB952-0A9B-4810-870F-B20D109C7B6D" typeID="0" displayDelay="0.000000" locked="false" persistent="false" fromTemplate="false" opacity="1.000000" source="" bezelRadius="0.000000" rotation="0.000000" drawingFill="false" drawingShadow="true" drawingStroke="false" fillColor="0 0 0 0" adjustsHeightToFit="false" verticalAlignment="0" revealType="0">
+                            <RVRect3D rvXMLIvarName="position">{12 9 0 1255 701}</RVRect3D>
+                            <shadow rvXMLIvarName="shadow">5.000000|0 0 0 1|{5, -5}</shadow>
+                            <dictionary rvXMLIvarName="stroke">
+                                <NSColor rvXMLDictionaryKey="RVShapeElementStrokeColorKey">0 0 0 0</NSColor>
+                                <NSNumber rvXMLDictionaryKey="RVShapeElementStrokeWidthKey" hint="integer">0</NSNumber>
+                            </dictionary>
+                            <NSString rvXMLIvarName="RTFData">e1xydGYxXGFuc2lcYW5zaWNwZzEyNTJcY29jb2FydGYxMzQ4XGNvY29hc3VicnRmMTcwCntcZm9udHRibFxmMFxmc3dpc3NcZmNoYXJzZXQwIEhlbHZldGljYTt9CntcY29sb3J0Ymw7XHJlZDI1NVxncmVlbjI1NVxibHVlMjU1O30KXHBhcmRcdHg1NjBcdHgxMTIwXHR4MTY4MFx0eDIyNDBcdHgyODAwXHR4MzM2MFx0eDM5MjBcdHg0NDgwXHR4NTA0MFx0eDU2MDBcdHg2MTYwXHR4NjcyMFxwYXJkaXJuYXR1cmFsXHFjCgpcZjBcZnMxNTAgXGNmMSBcb3V0bDBcc3Ryb2tld2lkdGgtNDAgXHN0cm9rZWMxIExvcmQgb2YgYWxsLCBZb3UgYXJlIExvcmQgb2YgYWxsXApMb3JkIG9mIGFsbCwgWW91IGFyZSBMb3JkIG9mIGFsbH0=</NSString>
+                        </RVTextElement>
+                    </array>
+                </RVDisplaySlide>
+            </array>
+        </RVSlideGrouping>
+    </array>
+    <array rvXMLIvarName="arrangements"/>
+</RVPresentationDocument>
